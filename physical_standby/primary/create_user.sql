@@ -1,0 +1,8 @@
+CREATE USER replication IDENTIFIED BY oracle;
+CREATE USER pubuser IDENTIFIED BY oracle;
+GRANT DBA TO replication;
+GRANT DBA TO pubuser;
+GRANT CREATE ANY TRIGGER TO pubuser;
+GRANT SELECT ANY TABLE TO pubuser;
+GRANT LOCK ANY TABLE TO pubuser;
+EXIT;

@@ -1,0 +1,11 @@
+ALTER SYSTEM SET STANDBY_FILE_MANAGEMENT=MANUAL;
+ALTER DATABASE ADD LOGFILE ('/u01/app/oracle/oradata/ORCL/onlinelog/online_redo01.log') SIZE 50M;
+ALTER DATABASE ADD LOGFILE ('/u01/app/oracle/oradata/ORCL/onlinelog/online_redo02.log') SIZE 50M;
+ALTER DATABASE ADD LOGFILE ('/u01/app/oracle/oradata/ORCL/onlinelog/online_redo03.log') SIZE 50M;
+ALTER SYSTEM SET STANDBY_FILE_MANAGEMENT=AUTO;
+ALTER DATABASE ADD STANDBY LOGFILE ('/u01/app/oracle/oradata/ORCL/onlinelog/standby_redo01.log') SIZE 50M;
+ALTER DATABASE ADD STANDBY LOGFILE ('/u01/app/oracle/oradata/ORCL/onlinelog/standby_redo02.log') SIZE 50M;
+ALTER DATABASE ADD STANDBY LOGFILE ('/u01/app/oracle/oradata/ORCL/onlinelog/standby_redo03.log') SIZE 50M;
+ALTER DATABASE ADD STANDBY LOGFILE ('/u01/app/oracle/oradata/ORCL/onlinelog/standby_redo04.log') SIZE 50M;
+ALTER DATABASE RECOVER MANAGED STANDBY DATABASE DISCONNECT FROM SESSION;
+exit;
